@@ -1,8 +1,50 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import logo from '../images/circular-saw.png'
 const pageTitle = 'Contact'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h1>Contact</h1>
+	<main>
+		<section class="contact">
+
+			<form class="contact__form">
+
+				<div class="form-details">
+					<h1 class="form-title">Get a quote</h1>
+					<p class="form-subtitle">...or call us today on <br /><a class="form-highlight" href="tel:01234567890">01234 567890</a></p>
+				</div>
+
+				<div class="form-input">
+					<label for="name" class="offscreen">Name</label>
+					<input type="text" id="name" placeholder="name" />
+				</div>
+
+				<div class="form-input">
+					<label for="tel" class="offscreen">Telephone number</label>
+					<input type="text" id="tel" placeholder="telephone" />
+				</div>
+
+				<div class="form-input">
+					<label for="email" class="offscreen">Email address</label>
+					<input type="email" id="email" placeholder="email" />
+				</div>
+
+				<div class="form-input">
+					<label for="description" class="offscreen">Job description</label>
+					<textarea id="description" placeholder="job description" rows="3"></textarea>
+				</div>
+
+				<button class="form-submit" type="submit">send</button>
+
+			</form>
+
+			<a class="contact__logo" href="/">
+				<img src={logo} alt="Midthorn Builders"/>
+			</a>
+	
+		</section>
+
+
+	</main>
 </BaseLayout>

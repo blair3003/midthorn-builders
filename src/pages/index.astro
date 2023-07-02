@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Toggle from '../components/Toggle.astro'
 import hero from '../images/cutting-granite-stones.jpg'
 import logo from '../images/circular-saw.png'
 import saw from '../images/hand-saw.png'
@@ -21,13 +22,12 @@ const pageTitle = 'Midthorn Builders'
 			</div>
 			<div class="hero__img">
 				<img class="img" src={hero} alt="Cutting granite"/>
-
 			</div>
 		</section>
 
-		<div class="toggle">
-
-		</div>
+		<section class="ribbon">
+			<Toggle />
+		</section>
 
 		<section class="teasers">
 			<div class="teaser">
@@ -47,5 +47,27 @@ const pageTitle = 'Midthorn Builders'
 		<footer class="footer">
 			<p>Get a quote via our online <a class="footer-highlight" href="/contact">Contact Form</a>, or call us today on <a class="footer-highlight" href="tel:01234567890">01234 567890</a></p>
 		</footer>
+
 	</main>
 </BaseLayout>
+
+
+
+<script is:inline>
+
+    const button = document.querySelector('.toggle')
+    const hero = document.querySelector('.hero')
+    const teasers = document.querySelector('.teasers')
+
+    button.addEventListener('click', () => {
+        (button.getAttribute('data-toggled') === 'false')
+			? hero.scrollIntoView({behavior: 'smooth'}, true)
+			: teasers.scrollIntoView({behavior: 'smooth'}, true)
+    })
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY === 0) button.setAttribute('data-toggled', false)
+        if ((window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight) button.setAttribute('data-toggled', true)
+    })
+
+</script>

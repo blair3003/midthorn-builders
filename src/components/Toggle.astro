@@ -1,0 +1,62 @@
+---
+import logo from '../images/circular-saw.png'
+---
+
+<button class="toggle" type="button" data-toggled="false">
+    <img class="toggle__img" src={logo} />
+</button>
+
+<style>
+    .toggle {
+        position: sticky;
+        top: 1rem;
+        display: flex;
+        align-items: flex-end;
+        width: 3rem;
+        height: 6rem;
+        border: 0;
+        cursor: pointer;
+        background-color: var(--clr-secondary-400);   
+        border-radius: 100px;
+        box-shadow: var(--inset);
+    }
+
+    @media (width < 64rem) {    
+        .toggle {
+            display: none;
+        }
+    }
+
+    .toggle[data-toggled=true] {
+        align-items: flex-start;
+    }
+
+    .toggle__img {
+        display: inline-block;
+        width: 3rem;
+        aspect-ratio: 1;
+        filter: var(--fltr-primary);
+        animation: spin 1s linear infinite both;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+</style>
+
+<script is:inline>
+
+    const toggle = document.querySelector('.toggle')
+
+    toggle.addEventListener('click', e => {
+        (toggle.getAttribute('data-toggled') === 'true')
+            ? toggle.setAttribute('data-toggled', false)
+            : toggle.setAttribute('data-toggled', true)
+    })
+
+</script>
