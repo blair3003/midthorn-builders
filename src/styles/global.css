@@ -128,7 +128,7 @@ body {
 }
 
 .toggle {
-    width: 300px;
+    width: 500px;
     aspect-ratio: 1;
 }
 
@@ -163,6 +163,7 @@ body {
     background-color: var(--clr-primary-400);
     border-radius: 10px;
     transform: translateY(-10rem);
+    box-shadow: var(--shadow);
 }
 
 .teaser__img {
