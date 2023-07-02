@@ -1,8 +1,51 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import hero from '../images/cutting-granite-stones.jpg'
+import logo from '../images/circular-saw.png'
+import saw from '../images/hand-saw.png'
+import wheelbarrow from '../images/wheelbarrow.png'
+import roller from '../images/roller-paint.png'
 const pageTitle = 'Midthorn Builders'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h1>Home</h1>
+	<main>
+		<section class="hero">
+			<div class="hero__text">
+				<a class="logo" href="/">
+					<img src={logo} alt="Midthorn Builders"/>
+				</a>
+				<h1 class="title">Midthorn Builders</h1>
+				<p class="subtitle">Making noise in <span class="subtitle-highlight" title="From Glasgow to Edinburgh, and everything in-between.">Central Scotland</span></p>
+				<a class="cta" href="/contact">Get a quote</a>
+			</div>
+			<div class="hero__img">
+				<img class="img" src={hero} alt="Cutting granite"/>
+
+			</div>
+		</section>
+
+		<div class="toggle">
+
+		</div>
+
+		<section class="teasers">
+			<div class="teaser">
+				<img class="teaser__img" src={saw} alt="hand saw" />
+				<p class="teaser__txt">Construction services, including carpentry, joining and roofing</p>
+			</div>
+			<div class="teaser">
+				<img class="teaser__img" src={wheelbarrow} alt="wheelbarrow" />
+				<p class="teaser__txt">Our tools are of the highest quality and material is sourced from local suppliers</p>
+			</div>
+			<div class="teaser">
+				<img class="teaser__img" src={roller} alt="paint roller" />
+				<p class="teaser__txt">Additional after care services include painting and carpet fitting</p>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<p>Get a quote via our online <a class="footer-highlight" href="/contact">Contact Form</a>, or call us today on <a class="footer-highlight" href="tel:01234567890">01234 567890</a></p>
+		</footer>
+	</main>
 </BaseLayout>
