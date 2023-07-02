@@ -18,6 +18,7 @@
     --fs-400: 1rem;
     --fs-500: 1.5rem;
     --fs-600: 2.25rem;
+    --fs-650: 3.5rem;
     --fs-700: 4rem;
     --fs-800: 4.75rem;
 
@@ -89,7 +90,7 @@ body {
 
 @media (width < 64rem) {
     .hero__text .title {
-        font-size: var(--fs-700);
+        font-size: var(--fs-650);
     }
 }
 
