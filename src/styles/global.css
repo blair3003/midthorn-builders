@@ -16,3 +16,26 @@
     --fs-700: 4rem;
     --fs-800: 4.75rem;
 }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+html {
+    color-scheme: light;
+}
+
+body {
+    color: var(--clr-primary-400);
+    font-family: var(--ff-base);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    line-height: 1.5;
+}
