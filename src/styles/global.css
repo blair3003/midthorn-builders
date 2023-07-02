@@ -321,7 +321,7 @@ body {
 @media (width < 64rem) {
     .contact__form input,
     .contact__form textarea {
-        font-size: var(--fs-500);
+        font-size: var(--fs-400);
     }
 }
 
